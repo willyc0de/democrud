@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dogs</h1>
+
+<div class="container">
+  <div class="row">
+    <% @dogs.each do |dog| %>
+
+    <div class="well col-md-4 text-center">
+      <h3><%= dog.name %></h3>
+      <%= image_tag dog.picture, class: "img-responsive" %>
+      <blockquote>
+        <%= dog.desc %>
+      </blockquote>
+      <%= link_to 'Show', dog, class: "btn btn-primary" %>
+      <%= link_to 'Edit', edit_dog_path(dog), class: "btn btn-info" %>
+      <%= link_to 'Destroy', dog, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+      
+    </div>
+    <% end %>
+     
+  </div>
+</div>
+
+    
+ <%= link_to 'New Dog', new_dog_path, class: "btn btn-success" %>
+<br>
+
+
